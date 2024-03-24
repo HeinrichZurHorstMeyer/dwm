@@ -64,6 +64,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *lockcmd[]           = { "slock", NULL };
 static const char *shutdown[]          = { "shutdown", "now", NULL };
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 static const Key keys[] = {
 	/*modifier         , key                      , function       , argument*/
@@ -107,6 +109,7 @@ static const Key keys[] = {
 	{ 0                , XK_Menu                  , spawn          , {.v = termcmd} },
 	{ MODKEY|ShiftMask , XK_F1                    , spawn          , {.v = shutdown} },
 	{ MODKEY           , XK_Escape                , spawn          , {.v = lockcmd} },
+	{ MODKEY           , XK_F12                   , togglescratch  , {.v = scratchpadcmd } },
 
 };
 
