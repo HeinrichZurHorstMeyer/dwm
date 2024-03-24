@@ -42,6 +42,8 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+	{ "|M|",      centeredmaster },
+	{ ">M>",      centeredfloatingmaster },
 };
 
 /* key definitions */
@@ -88,6 +90,7 @@ static const Key keys[] = {
 	{ MODKEY           , XK_t                     , setlayout      , {.v = &layouts[0]} }, // switch to "tile" layout
 	{ MODKEY           , XK_f                     , setlayout      , {.v = &layouts[1]} }, // switch to floating
 	{ MODKEY           , XK_o                     , setlayout      , {.v = &layouts[2]} }, // switch to "monocle" layout
+	{ MODKEY           , XK_u                     , setlayout      , {.v = &layouts[3]} }, // switch to "centeredmaster" layout
 	{ MODKEY           , XK_l                     , setmfact       , {.f = +0.025} }, // increase percentage of master window on monitor
 	{ MODKEY           , XK_h                     , setmfact       , {.f = -0.025} }, // decrease percentage of master window on monitor
 	{ MODKEY|ShiftMask , XK_period                , tagmon         , {.i = +1} }, // move window tag one monitor up
