@@ -2207,16 +2207,18 @@ centeredmaster(Monitor *m)
 		my += HEIGHT(c);
 	} else {
 		/* stack clients are stacked vertically */
-		if ((i - m->nmaster) % 2 ) {
-			h = (m->wh - ety) / ( (1 + n - i) / 2);
-			resize(c, m->wx, m->wy + ety, tw - (2*c->bw),
-			       h - (2*c->bw), 0);
-			ety += HEIGHT(c);
-		} else {
+		if ((i - m->nmaster) % 2 || (i == m->nmaster /*window ist first stack window*/ && !nexttiled(c->next))) {
+			// place right
 			h = (m->wh - oty) / ((1 + n - i) / 2);
 			resize(c, m->wx + mx + mw, m->wy + oty,
 			       tw - (2*c->bw), h - (2*c->bw), 0);
 			oty += HEIGHT(c);
+		} else {
+			// place left
+			h = (m->wh - ety) / ( (1 + n - i) / 2);
+			resize(c, m->wx, m->wy + ety, tw - (2*c->bw),
+			       h - (2*c->bw), 0);
+			ety += HEIGHT(c);
 		}
 	}
 }
