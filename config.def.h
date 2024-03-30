@@ -82,27 +82,28 @@ static const Key keys[] = {
 	TAGKEYS(XK_7       , 6)
 	TAGKEYS(XK_8       , 7)
 	TAGKEYS(XK_9       , 8)
-	{ MODKEY           , XK_period                , focusmon       , {.i = +1} }, // move focus one monitor up
-	{ MODKEY           , XK_comma                 , focusmon       , {.i = -1} }, // move focus one monitor down
-	{ MODKEY           , XK_j                     , focusstack     , {.i = +1} }, // move focus one window up in stack
-	{ MODKEY           , XK_k                     , focusstack     , {.i = -1} }, // move focus one window down in stack
-	{ MODKEY           , XK_plus                  , incnmaster     , {.i = +1} }, // add one window from number of master windows
-	{ MODKEY           , XK_minus                 , incnmaster     , {.i = -1} }, // remove one window from number of master windows
-	{ MODKEY           , XK_space                 , setlayout      , {0} }, // switch to last layout
-	{ MODKEY           , XK_t                     , setlayout      , {.v = &layouts[0]} }, // switch to "tile" layout
-	{ MODKEY           , XK_f                     , setlayout      , {.v = &layouts[1]} }, // switch to floating
-	{ MODKEY           , XK_o                     , setlayout      , {.v = &layouts[2]} }, // switch to "monocle" layout
-	{ MODKEY           , XK_u                     , setlayout      , {.v = &layouts[3]} }, // switch to "centeredmaster" layout
-	{ MODKEY           , XK_l                     , setmfact       , {.f = +0.025} }, // increase percentage of master window on monitor
-	{ MODKEY           , XK_h                     , setmfact       , {.f = -0.025} }, // decrease percentage of master window on monitor
-	{ MODKEY|ShiftMask , XK_period                , tagmon         , {.i = +1} }, // move window tag one monitor up
-	{ MODKEY|ShiftMask , XK_comma                 , tagmon         , {.i = -1} }, // move window tag one monitor down
-	{ MODKEY|ShiftMask , XK_0                     , tag            , {.ui = ~0} }, // tag window in all tags
-	{ MODKEY|ShiftMask , XK_b                     , togglebar      , {0} },
-	{ MODKEY|ShiftMask , XK_space                 , togglefloating , {0} },
-	{ MODKEY           , XK_Tab                   , view           , {0} }, // move to last tag
-	{ MODKEY           , XK_0                     , view           , {.ui = ~0} }, // view all tags
-	{ MODKEY|ShiftMask , XK_Return                , zoom           , {0} }, // change stack master
+	{ MODKEY           , XK_period                , focusmon         , {.i = +1} }, // move focus one monitor up
+	{ MODKEY           , XK_comma                 , focusmon         , {.i = -1} }, // move focus one monitor down
+	{ MODKEY           , XK_j                     , focusstack       , {.i = +1} }, // move focus one window up in stack
+	{ MODKEY           , XK_k                     , focusstack       , {.i = -1} }, // move focus one window down in stack
+	{ MODKEY           , XK_plus                  , incnmaster       , {.i = +1} }, // add one window from number of master windows
+	{ MODKEY           , XK_minus                 , incnmaster       , {.i = -1} }, // remove one window from number of master windows
+	{ MODKEY           , XK_space                 , setlayout        , {0} }, // switch to last layout
+	{ MODKEY           , XK_t                     , setlayout        , {.v = &layouts[0]} }, // switch to "tile" layout
+	{ MODKEY           , XK_f                     , setlayout        , {.v = &layouts[1]} }, // switch to floating
+	{ MODKEY           , XK_o                     , setlayout        , {.v = &layouts[2]} }, // switch to "monocle" layout
+	{ MODKEY           , XK_u                     , setlayout        , {.v = &layouts[3]} }, // switch to "centeredmaster" layout
+	{ MODKEY           , XK_l                     , setmfact         , {.f = +0.025} }, // increase percentage of master window on monitor
+	{ MODKEY           , XK_h                     , setmfact         , {.f = -0.025} }, // decrease percentage of master window on monitor
+	{ MODKEY|ShiftMask , XK_period                , tagmon           , {.i = +1} }, // move window tag one monitor up
+	{ MODKEY|ShiftMask , XK_comma                 , tagmon           , {.i = -1} }, // move window tag one monitor down
+	{ MODKEY|ShiftMask , XK_0                     , tag              , {.ui = ~0} }, // tag window in all tags
+	{ MODKEY|ShiftMask , XK_b                     , togglebar        , {0} },
+	{ MODKEY|ShiftMask , XK_space                 , togglefloating   , {0} },
+	{ MODKEY|ShiftMask , XK_f                     , togglefullscreen , {0} },
+	{ MODKEY           , XK_Tab                   , view             , {0} }, // move to last tag
+	{ MODKEY           , XK_0                     , view             , {.ui = ~0} }, // view all tags
+	{ MODKEY|ShiftMask , XK_Return                , zoom             , {0} }, // change stack master
 
 	// utility shortcuts
 	{ MODKEY           , XK_Return                , spawn          , {.v = termcmd} },
