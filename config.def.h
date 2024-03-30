@@ -2,6 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -88,6 +89,9 @@ static const Key keys[] = {
 	{ MODKEY           , XK_k                     , focusstack       , {.i = -1} }, // move focus one window down in stack
 	{ MODKEY           , XK_plus                  , incnmaster       , {.i = +1} }, // add one window from number of master windows
 	{ MODKEY           , XK_minus                 , incnmaster       , {.i = -1} }, // remove one window from number of master windows
+	{ MODKEY|ALTKEY    , XK_minus                 , setgaps          , {.i = -1 } },
+	{ MODKEY|ALTKEY    , XK_plus                  , setgaps          , {.i = +1 } },
+	{ MODKEY|ALTKEY    , XK_0                     , setgaps          , {.i = 0 } },
 	{ MODKEY           , XK_space                 , setlayout        , {0} }, // switch to last layout
 	{ MODKEY           , XK_t                     , setlayout        , {.v = &layouts[0]} }, // switch to "tile" layout
 	{ MODKEY           , XK_f                     , setlayout        , {.v = &layouts[1]} }, // switch to floating
